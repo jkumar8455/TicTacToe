@@ -1,7 +1,7 @@
 let turn = 'X';
-let changeturn =new Audio('changeturn.mp3');
-let game_over = new Audio('gameover.mp3')
-let gametied = new Audio('gametied.mp3')
+let changeturn =new Audio('../Music/changeturn.mp3');
+let game_over = new Audio('../Music/gameover.mp3')
+let gametied = new Audio('../Music/gametied.mp3')
 gameover = false ;
 let box = document.getElementsByClassName('box');
 
