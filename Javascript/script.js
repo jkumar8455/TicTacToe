@@ -5,21 +5,7 @@ let gametied = new Audio('../Music/gametied.mp3')
 gameover = false ;
 let box = document.getElementsByClassName('box');
 
-function checktie(){
-    let count = 0;
-    for(let i=0;i<box.length;i++){
-        if(box[i].innerText == 'X' || box[i].innerText == 'O'){
-            count=count+1;
-        }
-    }
-    if(count==9){
-        document.getElementById('turnInfo').innerText = 'Game Tied';
-        gametied.play();
-        gameover = true;
-    }
-}
-
-function checkwin(){
+function checkwinortie(){
     let wins = [
         [0,1,2],
         [3,4,5],
@@ -30,8 +16,6 @@ function checkwin(){
         [0,4,8],
         [2,4,6],
     ];
-    let count = 0;
-    // console.log(wins[7][0]);
     for(let i =0 ;i<8;i++){
         if(box[wins[i][0]].innerText== box[wins[i][1]].innerText && box[wins[i][2]].innerText == box[wins[i][1]].innerText && box[wins[i][0]].innerText !=''){
             document.getElementById("turnInfo").innerText = box[wins[i][0]].innerText + ' Won';
@@ -40,7 +24,19 @@ function checkwin(){
             }
             game_over.play();
             gameover = true;
+            return ;
         }
+    }
+    let count = 0;
+    for(let i=0;i<box.length;i++){
+        if(box[i].innerText == 'X' || box[i].innerText == 'O'){
+            count=count+1;
+        }
+    }
+    if(count==9){
+        document.getElementById('turnInfo').innerText = 'Game Tied';
+        gametied.play();
+        gameover = true;
     }
 }
 for(let i=0;i<box.length;i++){
@@ -56,8 +52,7 @@ for(let i=0;i<box.length;i++){
             else {
                 turn = 'X';
             }
-            checkwin();
-            checktie();
+            checkwinortie();
         }
         if(gameover == false){
             let turnInfo = document.getElementById('turnInfo');
