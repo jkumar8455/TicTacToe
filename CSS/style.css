@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+}
+nav{
+    background-color:rgb(3, 3, 3);
+    color: white;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    padding-left: 24px;
+    font-size: 28px ;
+    font-family: 'Roboto', sans-serif;
+}
+nav ul{
+    list-style-type: none;
+}
+.gamecontainer{
+    /* background-color: yellow; */
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+.container{
+    display: grid;
+    grid-template-rows: repeat(3,10vw);
+    grid-template-columns: repeat(3,10vw);
+    
+}
+.box{
+    border: 2px solid black;
+    cursor: pointer;
+    justify-content: center;
+    display: flex;
+    font-size: 9vw;
+}
+.box:active{
+    background-color: rgb(241, 234, 241);
+}
+.bl{
+    border-left: 0;
+}
+.br{
+    border-right: 0;
+}
+.bt{
+    border-top: 0;
+}
+.bb{
+    border-bottom: 0;
+}
+.info{
+    background-color: rgb(253, 231, 253);
+    border: 0.2vw solid rgb(150, 134, 134);
+    font-size: 2vw;
+    width: 10vw;
+    display: flex;
+    justify-content: center;
+    font-family: 'Roboto', sans-serif;
+    border-radius: 0.7vw;
+}
+#reset{
+    background-color: rgb(250, 217, 217);
+    margin-left: 1vw;
+    font-size: 2vw;
+    display: flex;
+    justify-content: center;
+    border-radius: 0.8vw;
+    font-family: 'Roboto', sans-serif;
+}
+.gameinfo div{
+    display: flex;
+    justify-content: center;
+}
+#heading{
+    width: 10vw;
+    font-family: 'Roboto', sans-serif;
+    font-size: 3vw;
+}
